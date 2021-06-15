@@ -1,0 +1,64 @@
+.usersStyle{
+    margin: 15px;
+    overflow-y: scroll;
+}
+.user{
+    box-shadow: 0 0 25px 0 rgba(45, 69, 95, 0.1);
+    border-radius: 10px;
+    margin: 10px;
+    display: grid;
+    grid-template-rows: 150px 80px 50px;
+}
+
+.usersPhoto{
+    width: 120px;
+    height: 120px;
+   margin-top: -50px;
+    margin-left: 15px;
+}
+
+.userStyle{
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    margin: 0 7% 0 7%;
+}
+.h1{
+    font-family: "Century Gothic";
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.forPaginator{
+    align-items: center;
+}
+
+.background{
+    max-width: 100%;
+}
+
+.nameProfile{
+    margin-top: 0;
+    margin-left: 200px;
+}
+.nameProfile h1{
+  font-size:16px;
+    font-weight: bold;
+}
+.follow Button{
+    align-items: center;
+    margin-left:10px;
+}
+
+.friendsList img{
+    max-width:100%;
+    position: relative;
+}
+.textFriendsList {
+    margin-left:38%;
+    margin-top:-150px;
+    text-align: center;
+    position: absolute;
+    align-items: center;
+    color: #656565;
+    font-size: 32px;
+}

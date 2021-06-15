@@ -1,0 +1,219 @@
+.formControl.error input,
+.formControl.error textarea {
+    border: solid rgba(212, 40, 40, 0.75) 2px;
+}
+
+.formControl.error span {
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: rgba(212, 40, 40, 0.75);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.formSummerError {
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    border: 1px rgba(212, 40, 40, 0.75) solid;
+    background-color: rgba(212, 40, 40, 0.75);
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    max-width: 160px;
+}
+
+.loginForm {
+    grid-area:c;
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    background-color: #50b5ff;
+    min-height: 100vh;
+
+}
+
+.loginBlock {
+    background: white;
+    max-width: 90%;
+    text-align: center;
+}
+
+
+.LogoBlock{
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    align-items:center;
+    margin-top:40px;
+}
+
+.LogotipName img {
+    max-width: 50%;
+}
+
+.FriendsLogo img {
+    max-width: 60%;
+    border-radius: 5px;
+}
+
+.Logotip h1 {
+    font-size: 28px;
+}
+.buttonForm{
+    color:white;
+    background-color: #50b5ff;
+   border: none;
+    border-radius: 5px;
+    align-self: center;
+    padding: 7px;
+}
+.loginBlock h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    font-size:30px;
+    margin-top:70px;
+}
+.MainForm {
+   align-items: center;
+    text-align: center;
+
+
+}
+.MainForm Input{
+    width:90%;
+    border-radius: 5px;
+    height: 30%;
+    margin-bottom:15px;
+    border: 1px solid #656565;
+}
+@media screen and (max-width:1200px){
+    .container {
+        width:1140px;
+    }
+}
+@media screen and (max-width:1199px){
+    .container {
+        width:960px;
+        padding: 0;
+        margin: 0;
+    }
+}
+@media screen and (max-width:991px){
+    .container {
+        width:720px;
+        padding: 0;
+        margin: 0;
+    }
+
+}
+@media screen and (max-width:767px){
+    .container {
+        width:540px}
+    .loginForm {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        background-color: #50b5ff;
+        border:none;
+        overflow-y: scroll;
+        padding: 20px;
+        margin-bottom: 20px;
+        height: 105%;
+
+    }
+
+    .loginBlock {
+        text-align: center;
+        background-color: #50b5ff;
+        border:none;
+    }
+
+
+    .LogoBlock{
+        text-align: center;
+        font-size: 14px;
+        align-items:center;
+        margin-top:20px;
+        background-color: #50b5ff;
+        border:none;
+    }
+    .buttonForm{
+        color:#50b5ff;
+        background-color: white;
+        border: none;
+        border-radius: 5px;
+        align-self: center;
+        padding: 7px;
+    }
+}
+@media screen and (max-width:575px){
+    .container {
+        width:100%;
+        padding: 0 15px;
+    }
+    .loginForm {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        background-color: #50b5ff;
+        border:none;
+overflow-y: scroll;
+        padding: 1em;
+       min-height: 100vh;
+
+    }
+
+    .loginBlock {
+        text-align: center;
+        background-color: #50b5ff;
+        border:none;
+    }
+
+
+    .LogoBlock{
+        text-align: center;
+        font-size: 14px;
+        align-items:center;
+        margin-top:10px;
+        background-color: #50b5ff;
+        border:none;
+    }
+
+    .LogotipName img {
+        display: none;
+    }
+
+    .FriendsLogo img {
+        max-width: 100%;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    .Logotip h1 {
+        font-size: 28px;
+    }
+    .buttonForm{
+        color:#50b5ff;
+        background-color:white ;
+        border: none;
+        border-radius: 5px;
+        align-self: center;
+        padding: 7px;
+    }
+    .loginBlock h2 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        line-height: 1.5;
+        margin-top:20px;
+    }
+    .MainForm {
+
+        margin: 0 10px 20px 30px;
+    }
+    .MainForm Input{
+        width:100%;
+        border-radius: 5px;
+        height: 30%;
+        margin-bottom:10px;
+    }
+}

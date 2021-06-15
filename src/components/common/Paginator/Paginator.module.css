@@ -1,0 +1,30 @@
+.paginator {
+    margin: 10px;
+    color: rgba(76, 79, 73, 0.88);
+    font-size: 14px;
+
+}
+
+.pageNumber {
+    margin: 10px;
+
+}
+
+.pageNumber.selectedPage {
+    border-radius: 50%;
+    background-color: #50b5ff;
+    color: white;
+    padding: 5px;
+
+}
+
+
+.buttonPaginator {
+    background-color: #e0f6ff;
+    color: #50b5ff;
+    border-radius: 15px;
+    border: none;
+    width: 60px;
+    height: 40px;
+    font-size: 14px;
+}

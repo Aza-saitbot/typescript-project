@@ -1,0 +1,426 @@
+.content {
+    grid-area: content;
+    display: grid;
+    grid-template-rows: auto 90px 550px 550px;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+            "headerProfile headerProfile"
+            "t t"
+            "event posts"
+            "friends posts";
+    grid-gap: 1em;
+    margin:1em 3em 1em 3em;
+    overflow-y: scroll;
+
+}
+
+
+.headerProfile{
+    grid-area: headerProfile;
+    display: grid;
+    grid-template-rows: 210px minmax(230px, auto);
+    border-radius: 10px;
+    box-shadow: 0 0 25px 0 rgba(45, 69, 95, 0.1);
+    background-color: white;
+}
+
+
+.banner {
+    display: grid;
+    position: relative;
+}
+
+.banner img {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.profileAndIcons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.photo{
+    max-width:100%;
+    max-height: 100%;
+    border-radius: 50%;
+}
+
+.photoFile {
+    width: 0.1px;
+    height: 0.1px;
+    overflow: hidden;
+    opacity: 0;
+
+}
+.wrapperInput {
+    position: relative;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid gray;
+    margin-left:50%;
+    width: 12em;
+}
+.labelChangePhoto{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    transform: translate(-100%, 40%);
+    background: rgba(0, 0, 0, .5);
+    color: white;
+    line-height: 30px;
+    cursor: pointer;
+    opacity: 0;
+    bottom: 0;
+    -webkit-transition: all .55s;
+    -o-transition: all .55s;
+    transition: all .55s;
+}
+
+.wrapperInput:hover .labelChangePhoto {
+    opacity: 1;
+    top:100px;
+}
+
+
+.statusProfile p {
+    font-size: 23px;
+    color: rgba(0, 0, 0, 0.74);
+    font-weight: bold;
+
+}
+
+.statusProfile {
+    margin-top: -40px;
+    text-align: center;
+    font-weight: 200;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+
+.social_icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,25px);
+    align-items: end;
+    column-gap:1.5em;
+    margin:0 1em 0 1em;
+}
+.socialIcons__item{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+.socialIcons__item img {
+    border-radius: 10%;
+}
+
+
+.hideShowButton{
+    display: grid;
+    align-items: center;
+}
+.editProfile {
+    margin-top: 15px;
+}
+
+.editMode {
+    color: #656565;
+    border-radius: 15px;
+    border: 1px solid transparent;
+    width: 80px;
+    height: 25px;
+    font-size: 14px;
+    margin: 10px;
+    padding: 2px;
+}
+
+.active:hover {
+    background-color: #50b5ff;
+    color: white;
+    border-radius: 15px;
+    border: 1px solid transparent;
+    width: 80px;
+    height: 25px;
+    font-size: 14px;
+    margin: 10px;
+    padding: 2px;
+
+}
+
+.wrapperEditProfile{
+    margin: 15px;
+}
+
+.profileData {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+gap:10px;
+    line-height: 1.8;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+
+}
+
+.form_control {
+    margin: 5px;
+padding-left: 10px;
+    height: 3em;
+    line-height: 3em;
+    background: transparent;
+    border: 1px solid #656565;
+    color: #656565;
+    border-radius: 10px;
+    width: 90%;
+}
+
+.buttonEditMode {
+display: grid;
+    justify-content: end;
+    margin-right: 2em;
+}
+
+.lookingForAJob {
+    margin: 5px;
+    padding: 5px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 14px;
+    color: #656565;
+}
+
+.Error {
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    border: 1px rgba(212, 40, 40, 0.75) solid;
+    background-color: rgba(212, 40, 40, 0.75);
+    padding: 5px;
+    border-radius: 5px;
+    max-width: 160px;
+    text-align: center;
+    align-items: center;
+    margin-left: 610px;
+}
+
+@media screen and (max-width:1200px){
+    .container {
+        width:1140px;
+    }
+
+    .content {
+        grid-area: content;
+        display: grid;
+        grid-template-rows: auto 90px minmax(500px, auto) minmax(500px, auto) minmax(500px, auto);
+        grid-template-columns: 1fr 3fr;
+        grid-template-areas:
+                "headerProfile headerProfile"
+                "t t"
+                "event event"
+                "friends friends"
+                "posts posts";
+        grid-gap: 1em;
+        margin:1em ;
+
+    }
+    .social_icons {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,20px);
+        align-items: flex-end;
+        margin:0 0 2em 2em;
+    }
+
+    .social_icons img {
+        border-radius: 10%;
+    }
+    .banner {
+        display: grid;
+        align-items: center;
+        position: relative;
+    }
+
+    .banner img {
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .wrapperInput {
+        margin-top:-4em;
+        transform: translate(-50%, -50%);
+        margin-left:50%;
+        width: 10em;
+    }
+    .headerProfile{
+        grid-area: headerProfile;
+        display: grid;
+        grid-template-rows: 200px minmax(100px, auto);
+    }
+
+}
+@media screen and (max-width:1199px){
+    .container {
+        width:960px}
+    .content {
+        grid-area: content;
+        display: grid;
+        grid-template-rows: auto 90px minmax(500px, auto) minmax(500px, auto) minmax(500px, auto);
+        grid-template-columns: 1fr 3fr;
+        grid-template-areas: "headerProfile headerProfile" "t t" "event event" "friends friends" "posts posts";
+        grid-gap: 1em;
+        margin: 1em;
+    }
+}
+@media screen and (max-width:991px){
+    .container {
+        width:720px}
+    .social_icons {
+        display: grid;
+        grid-template: 1fr/25px 25px 25px;
+        align-items: end;
+        gap:20px;
+        margin: 2em;
+
+    }
+    .socialIcons__item{
+        display: grid;
+        align-items: center;
+        justify-items: center;
+    }
+
+
+}
+@media screen and (max-width:767px){
+    .container {
+        width:540px}
+    .content {
+        grid-area: content;
+        display: grid;
+        grid-template-rows: auto 300px minmax(500px, auto) minmax(500px, auto) minmax(500px, auto);
+        grid-template-columns: 1fr 3fr;
+        grid-template-areas: "headerProfile headerProfile" "t t" "event event" "friends friends" "posts posts";
+        grid-gap: 1em;
+    }
+    .social_icons {
+        display:none;
+    }
+    .profileData {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: 10px;
+        padding: 5px;
+
+    }
+    .profileAndIcons {
+        display: grid;
+        grid-template-rows: 1fr 1px 1px;
+        max-width:100%;
+        align-items: center;
+    }
+    .banner img {
+        width: 85vw;
+    }
+    .wrapperInput {
+        position: relative;
+        text-align: center;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        overflow: hidden;
+        border: 1px solid gray;
+        margin-left:50%;
+        width: 10em;
+    }
+    .labelChangePhoto{
+        width: 60%;
+
+    }
+
+    .statusProfile {
+        margin-top: -40px;
+    }
+
+}
+@media screen and (max-width:575px){
+    .container {
+        width:100%;
+        padding: 0 15px;
+    }
+    .social_icons {
+        display:none;
+    }
+    .profileAndIcons {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+
+}
+@media screen and (max-width:375px){
+    .container {
+        width:100%;
+        padding: 0 15px;
+    }
+    .social_icons {
+        display:none;
+    }
+    .profileData {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap:5px;
+
+    }
+    .form_control {
+        margin: 2px;
+        width: 80%;
+    }
+    .wrapperEditProfile{
+        margin: 15px;
+    }
+    .buttonEditMode {
+        margin-right: 4em;
+    }
+
+    .wrapperInput {
+        margin-top:-5em;
+        transform: translate(-50%, -50%);
+        margin-left:50%;
+        width: 8em;
+    }
+    .banner img {
+        width: 80vw;
+        height: 40vw;
+    }
+
+}
+@media screen and (max-width:320px){
+    .container {
+        width:100%;
+        padding: 0 15px;
+    }
+    .form_control {
+        width: 65%;
+    }
+    .buttonEditMode {
+        margin-right: 8em;
+    }
+
+    .wrapperInput {
+        margin-top:-7em;
+        transform: translate(-50%, -50%);
+        margin-left:50%;
+        width: 8em;
+    }
+    .banner img {
+        width: 80vw;
+        height: 40vw;
+    }
+}

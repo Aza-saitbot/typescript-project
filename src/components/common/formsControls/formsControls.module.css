@@ -1,0 +1,30 @@
+.formControl.error input,
+.formControl.error textarea {
+    border: solid rgba(212, 40, 40, 0.75) 2px;
+}
+
+.formControl.error span {
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: rgba(212, 40, 40, 0.75);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.formSummerError {
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    border: 1px rgba(212, 40, 40, 0.75) solid;
+    background-color: rgba(212, 40, 40, 0.75);
+    padding: 5px;
+    margin: 10px;
+    border-radius: 5px;
+    max-width: 100vw;
+}
+
+.formControl{
+
+}
+.fieldForm{
+    padding:5px;
+}

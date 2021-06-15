@@ -1,0 +1,143 @@
+.messages {
+    display: grid;
+    grid-template-rows: 80px 1fr 90px;
+}
+
+
+.messageHeader {
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    align-items: center;
+}
+
+.message_header1 {
+    display: grid;
+    grid-template-columns: 65px auto;
+    text-align: start;
+    padding-right: 10px;
+}
+
+
+.message_header1 img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.message_header2 {
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    grid-column-gap: 5px;
+    align-items: center;
+    text-align: end;
+
+}
+.header2_icons{
+    padding: 5px;
+    background-color: rgba(0,194,216,0.04);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.header2_icons img {
+    width: 20px;
+    height: 20px;
+}
+
+.messageContent {
+    background: url("https://iqonic.design/themes/socialv/html/images/page-img/100.jpg") no-repeat;
+    padding: 1.4rem;
+    overflow-y: scroll;
+}
+
+.messageRight{
+    padding: 10px;
+    justify-self: end;
+    margin: 20px 0 20px 200px;
+    color: white;
+    background: #50b5ff;
+    border-radius: 15px 15px 0 15px;
+    box-shadow: 0 2px 4px 0 rgb(80, 181, 255);
+}
+.messageContent img {
+    width: 40px;
+    border-radius: 5px;
+}
+.messageLeft{
+    justify-self: start;
+    padding: 10px;
+    margin: 20px 200px 20px 0;
+    color: #50b5ff;
+    background: white;
+    border-radius: 15px 15px 15px 0;
+    box-shadow: 0 2px 4px 0 rgb(80, 181, 255);
+}
+.messageLeft img{
+    padding-right: 5px;
+}
+
+.messageFooter{
+    display: grid;
+    grid-template-columns: 80px auto;
+    align-items: center;
+
+}
+.footerForm{
+    display: grid;
+    grid-template-columns: auto 80px;
+}
+
+.messageFooter img{
+  width: 25px;
+}
+
+.footerIcons{
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    margin: 10px;
+}
+.footerText Input{
+    width: 95%;
+    height: 45px;
+    line-height: 45px;
+    background: transparent;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+
+.footerSend button {
+    background-color: #50b5ff;
+    color: white;
+    border-radius: 15px;
+    border: none;
+   padding: 10px;
+
+}
+
+.dataRight {
+   font-size: 40px;
+}
+.message_burger{
+    display:none;
+}
+
+@media screen and (max-width:767px){
+    .container {
+        width:540px}
+    .messageHeader {
+        display: grid;
+        grid-template-columns: 0.4fr 3fr 2fr;
+        align-items: center;
+    }
+    .message_burger{
+        display:grid;
+        align-items: center;
+    }
+}
+@media screen and (max-width:575px){
+    .container {
+        width:100%;
+        padding: 0 15px;
+    }
+}
