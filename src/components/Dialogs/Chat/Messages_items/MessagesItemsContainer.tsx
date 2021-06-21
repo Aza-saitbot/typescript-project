@@ -1,6 +1,6 @@
 import React from "react";
 import {
-dialogsIconType,
+    dialogsIconType, FriendsListType,
     messagesType
 } from "../../../../Redux/dialogs-reducer";
 import {connect} from "react-redux";
@@ -11,21 +11,24 @@ import {appStateType} from "../../../../Redux/redux-store";
 import {actions} from "../../../../Redux/dialogs-reducer";
 
 type MapStatePropsType = {
+    PublicChannels: Array<FriendsListType>
     messages: Array<messagesType>,
     dialogsIcons: Array<dialogsIconType>
-    showListMessages:boolean
+    activeListMessages:boolean
 }
 type MapDispatchPropsType = {
     addSendActionCreator:(newMessage:string)=>void
-    setShowListMessages:(body:boolean)=>void
+    setActiveListMessages:(body:boolean)=>void
 }
 
 
 const mapStateToProps = (state: appStateType): MapStatePropsType => {
     return {
+        PublicChannels: state.dialogsPage.PublicChannels,
         messages: state.dialogsPage.messages,
         dialogsIcons: state.dialogsPage.dialogsIcons,
-        showListMessages:state.dialogsPage.showListMessages
+        activeListMessages:state.dialogsPage.activeListMessages,
+
     }
 }
 export type PropsTypes=MapDispatchPropsType & MapStatePropsType
@@ -33,5 +36,5 @@ export type PropsTypes=MapDispatchPropsType & MapStatePropsType
 export default compose<React.ComponentType>( withAuthRedirect,
     connect <MapStatePropsType,MapDispatchPropsType ,{},appStateType> (mapStateToProps,
         {addSendActionCreator:actions.addSendActionCreator,
-            setShowListMessages:actions.setShowListMessages
+            setActiveListMessages:actions.setActiveListMessages
         }))(MessagesItems);

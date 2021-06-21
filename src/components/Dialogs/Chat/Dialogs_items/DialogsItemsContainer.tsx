@@ -9,20 +9,20 @@ import {actions, FriendsListType} from "../../../../Redux/dialogs-reducer";
 
 type MapStatePropsType={
     PublicChannels: Array <FriendsListType>
-    profile: profileType|null,
+    profile: profileType|null
     active:boolean
 }
 let mapStateToProps = (state:appStateType) => {
     return {
         PublicChannels: state.dialogsPage.PublicChannels,
         profile: state.postPage.profile,
-        active:state.dialogsPage.showListMessages
+        active:state.dialogsPage.activeListMessages
     }
 }
 type MapDispatchPropsType = {
-    setShowListMessages:(body:boolean)=>void
+    setActiveListMessages:(body:boolean)=>void
 }
 
 
 export default connect <MapStatePropsType,MapDispatchPropsType,{},appStateType> (mapStateToProps,
-    {setShowListMessages:actions.setShowListMessages})(dialogsItems);
+    {setActiveListMessages:actions.setActiveListMessages})(dialogsItems);

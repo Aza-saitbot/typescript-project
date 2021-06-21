@@ -1,5 +1,3 @@
-
-
 .dialogs {
     display: grid;
     grid-template-columns: 2fr 5fr;
@@ -14,6 +12,14 @@
 @media screen and (max-width:767px){
     .container {
         width:540px}
+    .dialogs {
+        display: grid;
+        grid-template:80vh/ 1fr;
+        box-shadow: 0 0 25px 0 rgba(45, 69, 95, 0.1);
+        border-radius: 10px;
+        margin:10px;
+
+    }
 
 }
 @media screen and (max-width:575px){

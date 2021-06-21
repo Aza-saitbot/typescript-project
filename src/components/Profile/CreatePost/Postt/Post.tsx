@@ -14,7 +14,7 @@ const Post:FC  <PostsnameType> = ({src3,name2,name,name1,p3,span1,span2,span3,
         <div className={s.post}>
             <div key={id} className={s.post1}>
                 <div className={s.header}>
-                    <div className={s.header1}>
+                    <div className={s.post__header__avatar}>
                         <img src={src1} alt=""/>
                     </div>
                     <div className={s.header2}>

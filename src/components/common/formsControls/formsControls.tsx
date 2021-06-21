@@ -39,7 +39,7 @@ export function createField<KeysType extends string>(placeholder: string | undef
                                                      component: FC<WrappedFieldProps> ,
                                                      props = {},
                                                      text = "",
-                                                     type?: string,
+                                                     type?: string |object,
                                                      value?: string) {
     return <div>
         <Field placeholder={placeholder}

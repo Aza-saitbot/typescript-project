@@ -1,143 +1,337 @@
 .messages {
-    display: grid;
-    grid-template-rows: 80px 1fr 90px;
+  display: grid;
+  grid-template-rows: 80px 1fr 90px;
 }
+.messagesEmpty{
+  background: url("../../../../images/message/100.jpg") no-repeat;
+  background-size: cover;
+  margin:0;
+  padding:0;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  color:white;
+}
+.messagesEmptyBlock h3 {
 
+    font-family: "Poppins", sans-serif;
+}
+.messagesEmptyBlock{
+  display: grid;
+  justify-items: center;
+}
 
 .messageHeader {
-    display: grid;
-    grid-template-columns: 5fr 2fr;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 5fr 3fr;
+  align-items: center;
+}
+.messageHeader__burger{
+  display:none
+}
+.messageHeader__avatarName{
+  display: grid;
+  grid-template-columns:0.3fr 1fr 3fr;
+  align-items: center;
+  justify-items: start;
+}
+.messageHeader__avatar{
+  display: grid;
+  align-items: center;
+  margin: 10px 10px 10px 20px;
+}
+.messageHeader__avatar img{
+  left:0;
+  top:0;
+  width: 4em;
+  border-radius:15%
+}
+.messageHeader__name{
+  display: grid;
+  grid-template-rows:1fr 1fr;
+  align-items: center;
+  justify-items: start;
 }
 
-.message_header1 {
-    display: grid;
-    grid-template-columns: 65px auto;
-    text-align: start;
-    padding-right: 10px;
+.message_header_icons{
+  display:grid;
+  grid-template-columns: repeat(4,3em);
+  column-gap:10px;
+  align-items: center;
+  justify-content: right;
+  justify-items: center;
+}
+.message_header_Icon{
+  display: grid;
+  align-items: center;
+  padding: 7px;
+  background-color: rgba(0,194,216,0.04);
+  border-radius: 10px;
+}
+.message_header_Icon img{
+  top:0;
+  left:0;
+  width: 1rem;
 }
 
-
-.message_header1 img {
-    width: 50px;
-    height: 50px;
-    border-radius: 5px;
-}
-
-.message_header2 {
-    display: grid;
-    grid-template-columns: repeat(4, 50px);
-    grid-column-gap: 5px;
-    align-items: center;
-    text-align: end;
-
-}
-.header2_icons{
-    padding: 5px;
-    background-color: rgba(0,194,216,0.04);
-    border-radius: 10px;
-    text-align: center;
-}
-
-.header2_icons img {
-    width: 20px;
-    height: 20px;
-}
 
 .messageContent {
-    background: url("https://iqonic.design/themes/socialv/html/images/page-img/100.jpg") no-repeat;
-    padding: 1.4rem;
-    overflow-y: scroll;
+  background: url("../../../../images/message/100.jpg") no-repeat;
+  padding: 1.4rem;
+  overflow-y: scroll;
+  font-size: 14px;
+}
+
+
+.messageRightColor{
+  display:grid;
+  padding: 20px;
+  color: white;
+  background: #50b5ff;
+  border-radius: 15px 15px 0 15px;
+  box-shadow: 0 2px 4px 0 rgb(80, 181, 255);
+
 }
 
 .messageRight{
-    padding: 10px;
-    justify-self: end;
-    margin: 20px 0 20px 200px;
-    color: white;
-    background: #50b5ff;
-    border-radius: 15px 15px 0 15px;
-    box-shadow: 0 2px 4px 0 rgb(80, 181, 255);
+  display:grid;
+  padding: 10px;
+  justify-items:end;
 }
-.messageContent img {
-    width: 40px;
-    border-radius: 5px;
+.messageRight h4{
+  display:grid;
+  margin-top: 10px;
+  justify-items:end;
+}
+.messageLeftColor{
+  display: grid;
+  color: #50b5ff;
+  background: white;
+  padding: 20px;
+  border-radius: 15px 15px 15px 0;
+  box-shadow: 0 2px 4px 0 rgb(80, 181, 255);
 }
 .messageLeft{
-    justify-self: start;
-    padding: 10px;
-    margin: 20px 200px 20px 0;
-    color: #50b5ff;
-    background: white;
-    border-radius: 15px 15px 15px 0;
-    box-shadow: 0 2px 4px 0 rgb(80, 181, 255);
+  display:grid;
+  justify-items:start ;
 }
-.messageLeft img{
-    padding-right: 5px;
+.messageLeft h4{
+  display:grid;
+  margin-top: 10px;
+  justify-items:start;
 }
+
 
 .messageFooter{
-    display: grid;
-    grid-template-columns: 80px auto;
-    align-items: center;
-
+  display: grid;
+  grid-template-columns: 15% 80%;
+  align-items: center;
+}
+.footerIcons{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
 }
 .footerForm{
+  display: grid;
+  grid-template-columns: 90% 10%;
+}
+.footerInput{
+
+  margin: 10px;
+}
+.footerInput Input{
+  top:0;
+  left:0;
+  width: 100%;
+  line-height: 45px;
+  background: transparent;
+  border-radius: 10px;
+  border:1px solid gray;
+}
+.footerInput Input:hover{
+  background: transparent;
+  border:1px solid #50b5ff;
+}
+.footerSendButton {
+  display:grid;
+  align-items: center;
+justify-items: center;
+}
+
+.footerSendButton button {
+  display:grid;
+  align-items: center;
+  justify-items: center;
+  background-color: #50b5ff;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+}
+
+@media screen and (max-width:991px){
+  .container {
+    width:720px}
+  .messages {
     display: grid;
-    grid-template-columns: auto 80px;
-}
-
-.messageFooter img{
-  width: 25px;
-}
-
-.footerIcons{
-    display: grid;
-    grid-template-columns: repeat(2,auto);
-    margin: 10px;
-}
-.footerText Input{
-    width: 95%;
-    height: 45px;
-    line-height: 45px;
-    background: transparent;
-    font-size: 14px;
-    border-radius: 10px;
-}
-
-
-.footerSend button {
-    background-color: #50b5ff;
-    color: white;
-    border-radius: 15px;
-    border: none;
-   padding: 10px;
-
-}
-
-.dataRight {
-   font-size: 40px;
-}
-.message_burger{
-    display:none;
+    grid-template-rows: 100px 1fr 70px;
+  }
+  .messageHeader__avatar{
+    margin: 5px;
+  }
+  .messageHeader__avatar img{
+    left:0;
+    top:0;
+    width: 3em;
+    border-radius:15%;
+  }
+  .message_header_icons{
+    display:grid;
+    grid-template-columns: repeat(4,2em);
+  }
 }
 
 @media screen and (max-width:767px){
-    .container {
-        width:540px}
-    .messageHeader {
-        display: grid;
-        grid-template-columns: 0.4fr 3fr 2fr;
-        align-items: center;
-    }
-    .message_burger{
-        display:grid;
-        align-items: center;
-    }
+  .container {
+    width:540px}
+
+  .messageHeader__burger{
+    display:grid;
+    align-items: center;
+    padding: 5px;
+    background-color: rgba(0,194,216,0.04);
+    border-radius: 10px;
+    margin-right:10px;
+  }
+  .message_burger{
+    padding: 8px;
+    background-color: rgba(0,194,216,0.04);
+  }
+  .messages {
+    display: grid;
+    grid-template-rows: 80px 1fr 90px;
+  }
+
+  .messageHeader {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    align-items: center;
+      margin:0 10px 0 10px;
+  }
+
+  .messageHeader__avatarName{
+    display: grid;
+    grid-template-columns:1fr 1fr 2fr;
+    column-gap: 5px;
+    align-items: center;
+    justify-items: start;
+  }
+  .messageHeader__avatar{
+    display: grid;
+    align-items: center;
+    margin: 5px;
+  }
+  .messageHeader__avatar img{
+    left:0;
+    top:0;
+    width: 3em;
+    border-radius:10%
+  }
+  .messageHeader__name{
+    display: grid;
+    grid-template-rows:1fr 1fr;
+    align-items: center;
+    justify-items: start;
+  }
+
+  .message_header_icons{
+    display:grid;
+    grid-template-columns: repeat(4,2em);
+    column-gap:10px;
+    align-items: center;
+    justify-content: right;
+    justify-items: center;
+  }
+  .message_header_Icon{
+    display: grid;
+    align-items: center;
+    padding: 5px;
+    background-color: rgba(0,194,216,0.04);
+    border-radius: 10px;
+  }
+  .message_header_Icon img{
+    top:0;
+    left:0;
+    width: 1rem;
+  }
+
+
+  .messageContent {
+    background: url("../../../../images/message/100.jpg") no-repeat;
+    padding: 1.4rem;
+    overflow-y: scroll;
+    font-size: 14px;
+  }
+
+
+
+  .messageFooter{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    align-items: center;
+  }
+  .footerIcons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    padding:5px;
+  }
+  .footerForm{
+    display: grid;
+    grid-template-columns: 75% 25%;
+  }
+  .footerInput{
+
+    margin: 10px;
+  }
+  .footerInput Input{
+    top:0;
+    left:0;
+    width: 100%;
+    line-height: 45px;
+    background: transparent;
+    border-radius: 10px;
+    border:1px solid gray;
+  }
+  .footerInput Input:hover{
+    background: transparent;
+    border:1px solid #50b5ff;
+  }
+  .footerSendButton {
+    display:grid;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .footerSendButton button {
+    display:grid;
+    align-items: center;
+    justify-items: center;
+    background-color: #50b5ff;
+    color: white;
+    border-radius: 15%;
+    border: none;
+    padding: 7px;
+    margin-right: 10px;
+  }
+
 }
 @media screen and (max-width:575px){
-    .container {
-        width:100%;
-        padding: 0 15px;
-    }
+  .container {
+    width:100%;
+    padding: 0 15px;
+  }
 }

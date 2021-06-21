@@ -5,13 +5,6 @@
 
 }
 
-input, textarea {outline: none}
-input:active, textarea:active {outline:none;}
-:focus {outline: none}
-textarea {resize: none}
-textarea {resize: vertical}
-textarea{resize: horizontal}
-
 
 .dialogsItems__authProfile{
     display: grid;
@@ -40,7 +33,6 @@ display:grid;
 }
 
 .dialogsItems__authProfile__closedBlock{
-
 display: none;
 }
 
@@ -81,16 +73,23 @@ display: none;
     overflow-y:scroll;
     height: 50vh;
     padding: 5px;
-
 }
+
 .dialogsItems__friends{
     display:grid;
-    grid-template-columns: 1fr 3fr 1.5fr;
+    grid-template-columns: 1fr 3fr 1fr;
     align-items: center;
     justify-items: center;
     border-top: 1px solid;
     border-color: rgba(0, 0, 0, 0.13);
     margin: 5px;
+}
+
+.dialogsItems__friends:hover{
+    background-color: rgba(159, 232, 226, 0.33);
+    text-decoration: none;
+    border-radius: 5px;
+    align-items: center;
 }
 .dialogsItems__friends__avatar{
     display: grid;
@@ -108,16 +107,40 @@ display: none;
     display: grid;
     grid-template-rows: 1fr 1fr;
     align-items: center;
-    justify-items: start;
-}
-.dialogsItems__friends_timeMessage{
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    align-items: center;
     justify-items: center;
 }
+.dialogsItems__friends_timeMessage{
+display:grid;
+    align-items: center;
+    justify-items: center;
 
+}
 
+@media screen and (max-width:1199px){
+    .container {
+        width:960px}
+    .dialogsItems__search{
+        margin: 10px;
+    }
+    .dialogsItems__friends__avatar img{
+        width: 3em;
+    }
+}
+@media screen and (max-width:991px){
+    .container {
+        width:720px}
+    .dialogsItems__authProfile__closedBlock{
+
+        display: none;
+    }
+    .dialogsItems__authProfile__avatar img{
+        top:0;
+        left:0;
+        width: 4em;
+        border-radius: 50%;
+    }
+
+}
 
 @media screen and (max-width:767px){
     .container {
@@ -132,31 +155,92 @@ display: none;
         top:80px;
         height: 90vh;
         width: 90vw;
-        transform: translateX(-106%);
-        transition: all 0.3s;
+        overflow-y:scroll;
+        transform: translateX(-190%);
+        transition: all 0.2s;
         z-index: 50;
+
     }
-    .dialogsItems__wrapper{
+
+    .dialogsItems__wrapper.active{
         transform: translateX(0);
+
     }
     .dialogsItems__blur{
         width: 100%;
         height: 100%;
-        left:6%;
+        left:90%;
         backdrop-filter: blur(2px);
         position: absolute;
     }
     .dialogsItems__content{
-        width: 20%;
-        height: 100%;
-        background-color: rgba(167,213,255,0.5);
+        width:90%;
+        height: 80vh;
+        background-color: white;
         transition: all 0.4s;
+        border:1px solid #50b5ff;
+        border-radius: 5px;
+        box-shadow: 0px 25px 25px 0px rgba(45, 69, 95, 0.1);
+
+    }
+    .dialogsItems__authProfile__closedBlock{
+        display: grid;
+        align-items: center;
+        justify-items: center;
+    }
+    .dialogsItems__listFriends{
+        height: 40vh;
     }
 
+    .dialogsItems__search{
+        margin:10px;
+        border-radius: 10px;
+        padding: 3px;
+        border: 1px solid gray;
+
+    }
+    
 }
 @media screen and (max-width:575px){
     .container {
         width:100%;
         padding: 0 15px;
+    }
+     .dialogsItems__wrapper{
+        position: fixed;
+        display: grid;
+        grid-template-rows: 20vh 60vh;
+        padding:15px;
+        box-shadow: 0px 25px 25px 0px rgba(45, 69, 95, 0.1);
+        left:0;
+        top:80px;
+        height: 90vh;
+        width: 90vw;
+        overflow-y:scroll;
+        transform: translateX(-200%);
+        transition: all 0.2s;
+        z-index: 50;
+
+    }
+    .dialogsItems__wrapper.active{
+        transform: translateX(0);
+
+    }
+    .dialogsItems__blur{
+        width: 100%;
+        height: 100%;
+        left:100%;
+        backdrop-filter: blur(2px);
+        position: absolute;
+    }
+    .dialogsItems__content{
+        width:100%;
+        height: 80vh;
+        background-color: white;
+        transition: all 0.4s;
+        border:1px solid #50b5ff;
+        border-radius: 5px;
+        box-shadow: 0px 25px 25px 0px rgba(45, 69, 95, 0.1);
+
     }
 }

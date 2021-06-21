@@ -11,6 +11,12 @@ body {
   font-size: 14px;
   line-height: 1.8;
 }
+input, textarea {outline: none}
+input:active, textarea:active {outline:none;}
+:focus {outline: none}
+textarea {resize: none}
+textarea {resize: vertical}
+textarea{resize: horizontal}
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif;

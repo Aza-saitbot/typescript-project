@@ -13,11 +13,11 @@ type PropsType = {}
 const AddNewMessageForm: FC<InjectedFormProps<addNewFormValuesType, PropsType> & PropsType> = (props) => {
     return (
         <form onSubmit={props.handleSubmit} className={s.footerForm}>
-            <div className={s.footerText}>
+            <div className={s.footerInput}>
                 {createField<addNewFormValuesKeysType>('Write something here...',
                     'newMessageBody', [required, maxLength100], Input)}
             </div>
-            <div className={s.footerSend}>
+            <div className={s.footerSendButton}>
                 <button><SendOutlined style={{color:'white',fontSize:'25px'}} /></button>
             </div>
         </form>

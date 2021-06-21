@@ -57,7 +57,7 @@ const CreatePost: FC<PropsType> = ({profile}) => {
     return <div className={s.posts}>
         <div className={s.createPost}>
             <div className={s.contentForm}>
-                <div>
+                <div className={s.contentForm__avatar}>
                     <img src={profile.photos.large || userPhoto}/>
                 </div>
                 <AddPostReduxForm onSubmit={newPost}/>

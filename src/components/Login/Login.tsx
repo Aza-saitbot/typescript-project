@@ -6,7 +6,6 @@ import {useDispatch, useSelector} from "react-redux"
 import {login} from "../../Redux/authReducer"
 import {Redirect} from "react-router-dom"
 import s from "./login.module.css"
-import FriendsLogo from "./../../axios/images/Friends_list2.png"
 import {appStateType} from "../../Redux/redux-store"
 
 //Для авториз пол-я использую redux-fom
@@ -17,6 +16,7 @@ const LoginForm: FC<InjectedFormProps<LoginFormValuesType, LoginFormOwnProps> & 
 
     return (
         <form onSubmit={handleSubmit} className={s.MainForm}>
+            <div><h2>Log In</h2></div>
             {createField<LoginFormValuesKeysType>("Email", "email", [required], Input)}
             {createField<LoginFormValuesKeysType>("Password", "password", [required], Input, {type: "password"})}
             {captchaUrl && <img src={captchaUrl}/>}
@@ -68,16 +68,13 @@ export const Login: FC = (props) => {
 
     return <div className={s.loginForm}>
         <div className={s.LogoBlock}>
-            <div className={s.LogotipName}><img src="https://iqonic.design/themes/socialv/html/images/logo-full.png"/>
-            </div>
-            <div className={s.FriendsLogo}><img src={FriendsLogo}/></div>
-            <div>
-                <h1>Find new friends</h1>
-                <p>SocialIV helps you connect and share with the people in your life.</p>
+            <div className={s.LogoBlockText}>
+                <h2>Find new friends</h2>
+                <p>SocialIV helps you connect and</p>
+                <p>share with the people in your life.</p>
             </div>
         </div>
         <div className={s.loginBlock}>
-            <div><h2>Log In</h2></div>
             <LoginReduxForm onSubmit={onSubmit} captchaUrl={captchaUrl}/>
         </div>
     </div>

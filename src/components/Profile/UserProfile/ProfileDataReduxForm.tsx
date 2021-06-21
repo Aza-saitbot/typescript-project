@@ -3,9 +3,8 @@ import s from "./../Profile.module.css";
 import {required} from "../../../utils/validations/validator";
 import {InputEditProfile, TextareaEditProfile} from "../../common/formsControls/formEditProfile";
 import {profileType} from "../../../type/type";
-import {createField} from "../../common/formsControls/formsControls";
-import {InjectedFormProps, reduxForm} from "redux-form";
-import {Button} from "antd";
+import {createField, Input} from "../../common/formsControls/formsControls";
+import {Field, InjectedFormProps, reduxForm} from "redux-form";
 
 
 export type ProfileFormOwnPropsType = {
@@ -20,7 +19,6 @@ type ProfileFormValuesKeysType = Extract<keyof profileType, string>
 const ProfileDataForm: FC<InjectedFormProps<profileType,
     ProfileFormOwnPropsType> & ProfileFormOwnPropsType> = ({handleSubmit, profile, error}) => {
 
-    const renderError = () => error ? <span>{error}</span> : false
 
     return <form onSubmit={handleSubmit} className={s.editReduxForm__wrapper}>
         <div className={s.buttonEditMode}>
@@ -34,7 +32,6 @@ const ProfileDataForm: FC<InjectedFormProps<profileType,
                     <h3>Full name:</h3>
                     {createField<ProfileFormValuesKeysType>("Full name", "fullName", [required], InputEditProfile)}
                 </div>
-
                 <div>
                     <h3>My professional skills:</h3>
                     {createField<ProfileFormValuesKeysType>("My professional skills", "lookingForAJobDescription",

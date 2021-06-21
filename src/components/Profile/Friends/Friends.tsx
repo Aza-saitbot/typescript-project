@@ -12,9 +12,9 @@ const Friends:FC <PropsType> = ({sidebar}) => {
     let friendsElements = sidebar.map(f =>
         <div className="friends__icons" key={f.id}>
             <div className="friends__ava">
-                <a href='#'> <img src={f.src}/></a>
+                <img src={f.src}/>
             </div>
-            <div className="friends__names">
+            <div className="friends__name">
                 <h3>{f.name}</h3>
             </div>
         </div>)

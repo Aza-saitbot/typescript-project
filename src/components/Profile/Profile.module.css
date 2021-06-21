@@ -1,17 +1,18 @@
 .content {
     grid-area: content;
     display: grid;
-    grid-template-rows: auto 90px 550px 550px;
-    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto 90px minmax(40em, auto) minmax(40em, auto);
+    grid-template-columns: 30% 70%;
     grid-template-areas:
             "headerProfile headerProfile"
             "t t"
             "event posts"
             "friends posts";
     grid-gap: 1em;
-    margin:1em 3em 1em 3em;
-    overflow-y: scroll;
-
+    padding: 2em;
+overflow-y: scroll;
+    height: 100vh;
+    max-height: 100vw;
 }
 
 
@@ -26,7 +27,6 @@
 
 
 .banner {
-    display: grid;
     position: relative;
 }
 
@@ -35,6 +35,7 @@
     top:0;
     left:0;
     width: 100%;
+    height:100%;
     object-fit: cover;
     border-radius: 10px;
 }
@@ -214,21 +215,7 @@ display: grid;
         width:1140px;
     }
 
-    .content {
-        grid-area: content;
-        display: grid;
-        grid-template-rows: auto 90px minmax(500px, auto) minmax(500px, auto) minmax(500px, auto);
-        grid-template-columns: 1fr 3fr;
-        grid-template-areas:
-                "headerProfile headerProfile"
-                "t t"
-                "event event"
-                "friends friends"
-                "posts posts";
-        grid-gap: 1em;
-        margin:1em ;
-
-    }
+   
     .social_icons {
         display: grid;
         grid-template-columns: repeat(auto-fit,20px);
@@ -270,19 +257,27 @@ display: grid;
 @media screen and (max-width:1199px){
     .container {
         width:960px}
-    .content {
-        grid-area: content;
-        display: grid;
-        grid-template-rows: auto 90px minmax(500px, auto) minmax(500px, auto) minmax(500px, auto);
-        grid-template-columns: 1fr 3fr;
-        grid-template-areas: "headerProfile headerProfile" "t t" "event event" "friends friends" "posts posts";
-        grid-gap: 1em;
-        margin: 1em;
-    }
+
 }
 @media screen and (max-width:991px){
     .container {
         width:720px}
+    .content {
+        grid-area: content;
+        display: grid;
+        grid-template-rows: auto 20em minmax(55em,auto) minmax(55em,auto) minmax(55em,auto);
+        grid-template-columns: 1fr;
+        grid-template-areas:
+                "headerProfile"
+                "t"
+                "event"
+                "friends"
+                "posts";
+        column-gap: 2em;
+        height: 100vh;
+
+    }
+    
     .social_icons {
         display: grid;
         grid-template: 1fr/25px 25px 25px;
@@ -302,13 +297,21 @@ display: grid;
 @media screen and (max-width:767px){
     .container {
         width:540px}
-    .content {
+.content {
         grid-area: content;
         display: grid;
-        grid-template-rows: auto 300px minmax(500px, auto) minmax(500px, auto) minmax(500px, auto);
-        grid-template-columns: 1fr 3fr;
-        grid-template-areas: "headerProfile headerProfile" "t t" "event event" "friends friends" "posts posts";
-        grid-gap: 1em;
+        grid-template-rows: auto 20em minmax(40em,auto) minmax(40em,auto) minmax(55em,auto);
+        grid-template-columns: 1fr;
+        grid-template-areas:
+                "headerProfile"
+                "t"
+                "event"
+                "friends"
+                "posts";
+        column-gap: 2em;
+    padding: 10px;
+        height: 100vh;
+
     }
     .social_icons {
         display:none;
@@ -326,9 +329,7 @@ display: grid;
         max-width:100%;
         align-items: center;
     }
-    .banner img {
-        width: 85vw;
-    }
+
     .wrapperInput {
         position: relative;
         text-align: center;
@@ -352,7 +353,7 @@ display: grid;
 @media screen and (max-width:575px){
     .container {
         width:100%;
-        padding: 0 15px;
+        padding: 0;
     }
     .social_icons {
         display:none;
@@ -367,7 +368,7 @@ display: grid;
 @media screen and (max-width:375px){
     .container {
         width:100%;
-        padding: 0 15px;
+        padding: 0;
     }
     .social_icons {
         display:none;
@@ -395,16 +396,13 @@ display: grid;
         margin-left:50%;
         width: 8em;
     }
-    .banner img {
-        width: 80vw;
-        height: 40vw;
-    }
+
 
 }
 @media screen and (max-width:320px){
     .container {
         width:100%;
-        padding: 0 15px;
+        padding: 0;
     }
     .form_control {
         width: 65%;
@@ -420,7 +418,12 @@ display: grid;
         width: 8em;
     }
     .banner img {
-        width: 80vw;
-        height: 40vw;
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height:80%;
+        object-fit: cover;
+        border-radius: 10px;
     }
 }

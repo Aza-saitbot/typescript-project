@@ -12,7 +12,7 @@ import Events from "../Event/Event";
 import Friends from "../Friends/Friends";
 import {Button} from "antd";
 
-//типизация страницы профиля
+
 type PropsType={
     profile:profileType |null
     isOwner:boolean
@@ -29,7 +29,9 @@ type PropsType={
 
 const  UserProfile:FC <PropsType> = ({
                          profile, isOwner, status, updateStatus,
-                         savePhoto, saveProfile, updateStatusProfile, socialIcons,lifeEvent, sidebar
+                         savePhoto, saveProfile, updateStatusProfile,
+                                         socialIcons,
+                                         lifeEvent, sidebar
                      }) => {
 
     //данный локальный state исп. для вкл и откл режима редактирования профиля
@@ -54,6 +56,7 @@ const  UserProfile:FC <PropsType> = ({
     //Это ф-я обработичка события, к-я направить сформулированные данные профиля на сервер
     //после успешного ответа из сервера устанавливаем в стайте и будет отрисовка этих данных на стр.
     const onSubmit = (FormData:profileType) => {
+        console.log(FormData);
         saveProfile(FormData);
         if (updateStatusProfile === "Success") {
             setEditMode(false)

@@ -18,7 +18,7 @@ export type PostsnameType = {
     name2: string
     src2: string
     p3: string
-    src3:string | typeof travel | typeof tailand | typeof football
+    src3:string | typeof travel | typeof tailand | typeof football |any
     src4: string,
     span1: string,
     time1: string
@@ -40,7 +40,7 @@ export type sidebarType = {
 }
 export type smallIconsType = { id: number, src: string, p: string }
 export type socialIconsType = { id: number, src: string }
-export type lifeEventType = { id: number, src: typeof Photographer | typeof jobAtApple, text: string | null, time: string | null }
+export type lifeEventType = { id: number, src: typeof Photographer | typeof jobAtApple }
 
 //стартовое значения в стайте
 let initialState = {
@@ -172,8 +172,8 @@ let initialState = {
         {id: 6, src: 'https://iqonic.design/themes/socialv/html/images/icon/13.png'}
     ] as Array<socialIconsType>,
     lifeEvent: [
-        {id: 1, src: jobAtApple, text: "Started New Job at Apple", time: "31 March 2021"},
-        {id: 2, src: Photographer, text: "Frontend developer", time: "31 March 2021"}
+        {id: 1, src: jobAtApple},
+        {id: 2, src: Photographer},
     ] as Array<lifeEventType>
 };
 
@@ -186,12 +186,12 @@ const profileReducer = (state = initialState, action: ActionType): initialStateT
                 Postsname: [...state.Postsname,{
                     id: 4,
                     src1: Iam,
-                    name: action.newPost,
+                    name: 'Bni Cust',
                     name1: 'SaitBot',
                     name2: '10 hour ago',
                     src2: 'https://avatars.mds.yandex.net/get-zen_doc/237236/pub_5d1b95137782bf00adbe3694_5d1b9522f221ef00adfa605d/scale_1200',
-                    p3: '',
-                    src3: tailand,
+                    p3: action.newPost,
+                    src3: null,
                     src4: 'https://iqonic.design/themes/socialv/html/images/icon/01.png',
                     span1: '0 Likes',
                     time1: '0 Comment',
@@ -239,6 +239,7 @@ const profileReducer = (state = initialState, action: ActionType): initialStateT
 
 
 export const actions = {
+
     addPostActionCreator: (newPost: string) => ({ newPost, type: "ST/profile/ADD_POST"} as const),
     setUserProfile: (profile: profileType) => ({type: "ST/profile/SET_USER_PROFILE", profile} as const),
     setStatus: (status: string) => ({type: "ST/profile/SET_STATUS", status} as const),
@@ -276,9 +277,10 @@ export const updateStatus = (status: string): ThunkType => {
     }
 }
 //0 означает по API документации, что сервер говорит вы успешно обновили статус на сервере,
-// "вешаем на ассихронный запрос" обработчик ошибки try/catch,если что то пойдет не так выведет ошибку
-// в алерте показывает пользователю ошибку либо могли какие то действия принят, можно сделать редирект на логинизацию например
+// "вешаем на ассихронный запрос" обработчик ошибки try/catch,если что то пойдет, то выведет ошибку
 
+
+//Запрос на авторизации юзера с таким айди/Дай мне данные профиля с таким айди
 export const getUsersProfileCreator = (userId: number ): ThunkType => {
     return async (dispatch) => {
         try{
@@ -290,8 +292,9 @@ export const getUsersProfileCreator = (userId: number ): ThunkType => {
     }
 }
 
-//отправка изображения на сервер
+//отправка изображения на сервер и если все успешно, то возьми изображения и сохрани его в стайте, дальше он уже отрисуется в нужном компоненте
 export const savePhoto = (filePhoto: File):ThunkType=> {
+
     return async (dispatch) => {
         try {
             let data = await profileAPI.savePhoto(filePhoto);
@@ -302,25 +305,32 @@ export const savePhoto = (filePhoto: File):ThunkType=> {
             console.log(e)
         }
     }
-}/*//если отвечаем успешно, сохраняем в state и направляется в Component и происходить отрисовка*/
+}
 
-//запрос на сохранения данных для авторизованного пол-ля, если данные на сервере успешны сохранены или обновились
-// то данные устанавливаются в сторе и дальше нужный компонент берет эти данные и рендирить
-export const saveProfile = (profile: profileType): ThunkType => {
-
-    return async (dispatch, getState) => {
-
-        const data = await profileAPI.saveProfile(profile);
+//Данная санка направляет на сервер новые данные профиля, сервер отвечает 0 (успешно) или 1 (не успешно)
+//Если успешно обновилась на сервере, выполняем новый запрос за обновленными данными профиля юзера и статуса его
+//Если не успешно, то показываем ошибку
+export const saveProfile = (profile: profileType): ThunkType => async (dispatch, getState) => {
+    /*Пришли данные из компонента(формы) в санку*/
+        /*Забрали из стора айди юзера, к-й авторизовался*/
         const userId = getState().auth.userId
+    /*дождались пока обновиться на сервере данные профиля, и сохраняем в переменную рез-т ответа сервера*/
+        const data = await profileAPI.saveProfile(profile);
+
+    /*Если сервер ответил 0 то успешно, если 1 то выдаст ошибку*/
         if (data.resultCode === ResultCodeEnum.Success) {
-            if (userId !=null){dispatch(getUsersProfileCreator(userId))}
-            else {throw new Error("userId can not be null")}
+          /*Делаем проверку на не авторизованного юзера, если есть айди то запрашиваем заново данные профиля и статуса его*/
+            if (userId !=null){
+                dispatch(getUsersProfileCreator(userId))
+            } else {
+                throw new Error("userId can not be null")
+            }
             dispatch(actions.setUpdateStatusProfile("Success"));
         } else {
             dispatch(stopSubmit('edit-profile', {_error: data.messages[0]}));
             dispatch(actions.setUpdateStatusProfile("Error"))
         }
-    }
+    
 }/*//UserId не может быть null, все пол-и в базе авторизованы*/
 
 export default profileReducer;

@@ -16,6 +16,7 @@ export const Navbar: FC<PropsType> = () => {
     const setMenuActive = () => {
         dispatch(setMenuActiveAC(false))
     }
+    const isAuth = useSelector((state: appStateType) => state.auth.isAuth)
 
     const arrNavbar = useSelector((state: appStateType) => state.navbar.navbarItems.map(n => {
         return <div key={n.id} className="nav__array">
@@ -25,9 +26,9 @@ export const Navbar: FC<PropsType> = () => {
         </div>
     }))
     return (
-        <nav className={active ? 'nav__wrapper active' : 'menu'} onClick={setMenuActive}>
+        <nav className={active ? 'nav__wrapper active' : 'nav__wrapper'} onClick={setMenuActive}>
             <div className="nav__blur">
-                <div className="nav__content" onClick={e=>e.stopPropagation()}>{arrNavbar}</div>
+                 <div className={isAuth ?"nav__content":"nav__NotAuth"} onClick={e=>e.stopPropagation()}>{arrNavbar}</div>
             </div>
         </nav>
     )

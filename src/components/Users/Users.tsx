@@ -1,7 +1,6 @@
 import React, {FC} from 'react';
 import s from './users.module.css'
 import User from "./User";
-import FriendsList from "./../../axios/images/BIG-profile.jpg"
 import {usersType} from "../../type/type";
 import Paginator from "../common/Paginator/Paginator";
 
@@ -25,8 +24,8 @@ let Users: FC<PropsType> = ({
                             }) => {
     return <div className={s.usersStyle}>
         {/*//блок баннера изображения*/}
-        <div className={s.friendsList}><img src={FriendsList} alt="Friends list"/>
-            <div className={s.textFriendsList}>Friends list</div>
+        <div className={s.friendsList}>
+            <div className={s.friendsList_item}>Friends list</div>
         </div>
 
         {/*//компонент к-ый отрисовывает об кол-ве стр и текущего стр*/}

@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter, Redirect, Route, withRouter} from "react-router-dom";
+import { HashRouter, Redirect, Route, withRouter} from "react-router-dom";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import {Login} from "./components/Login/Login";
 import {compose} from "redux";
@@ -48,7 +48,7 @@ class App extends React.Component <MapPropsType & MapDispatchType> {
         return (
             <div className="container">
                 <Header/>
-                <Navbar/>
+                <Navbar />
                 <Online/>
                 <div className="content__wrapper">
                     <Route path="/profile/:userId?"><ProfileContainer/></Route>
@@ -56,6 +56,7 @@ class App extends React.Component <MapPropsType & MapDispatchType> {
                     <Route path="/users"><UsersPage/></Route>
                     <Route exact path="/login"><Login/></Route>
                 </div>
+                <Redirect to="/login"/>
             </div>
         )
     }
@@ -74,11 +75,11 @@ const AppContainer = compose<React.ComponentType>(
     connect(mapStateToProps, {initializeApp}))(App);
 
 const MyApp = () => {
-    return <BrowserRouter>
+    return <HashRouter>
         <Provider store={store}>
             <AppContainer/>
         </Provider>
-    </BrowserRouter>
+    </HashRouter>
 }
 
 export default MyApp;

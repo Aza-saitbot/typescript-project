@@ -15,6 +15,7 @@ const ProfileStatusWithHooks: FC <PropsType> = ({status,updateStatus}) => {
     // и с помощью завис-ти useEffect актуализируем статус
     let [localStateStatus, setStatus] = useState<string>(status);
 
+    //Хук следить за статусом если придет из пропсов он обновит состояния сперва в лок стайте, затем отрисуется
     useEffect(() => {
         setStatus(status)
     }, [status])

@@ -23,48 +23,53 @@
 }
 
 .loginForm {
-    grid-area:c;
+    grid-area:content;
     display: grid;
     grid-template-columns: 7fr 3fr;
-    background-color: #50b5ff;
+    background: url("../../../../social-project/src/images/message/Friends.jpg") no-repeat;
     min-height: 100vh;
 
 }
 
+
 .loginBlock {
-    background: white;
-    max-width: 90%;
+    display: grid;
     text-align: center;
+    background: #50b5ff;
+    max-width: 100%;
 }
 
 
 .LogoBlock{
-    text-align: center;
-    color: white;
-    font-size: 16px;
+    display:grid;
     align-items:center;
-    margin-top:40px;
-}
+    font-size: 30px;
 
-.LogotipName img {
-    max-width: 50%;
 }
-
-.FriendsLogo img {
-    max-width: 60%;
-    border-radius: 5px;
+.LogoBlockText{
+    display: grid;
+    justify-items: center;
+    width:70vw;
+    height: 50vh;
+    background: #50b5ff;
+    bottom:0;
+    padding: 15px;
+    opacity: 0.5;
 }
 
 .Logotip h1 {
     font-size: 28px;
 }
 .buttonForm{
-    color:white;
-    background-color: #50b5ff;
+    color:#50b5ff;
+    background-color:white ;
    border: none;
-    border-radius: 5px;
-    align-self: center;
-    padding: 7px;
+    border-radius: 5%;
+    padding: 5px 7px 5px 7px;
+}
+.buttonForm:hover{
+    color:white;
+    background-color:rgba(145,84,172,0.85) ;
 }
 .loginBlock h2 {
     font-family: "Poppins", sans-serif;
@@ -76,7 +81,6 @@
 .MainForm {
    align-items: center;
     text-align: center;
-
 
 }
 .MainForm Input{
@@ -111,31 +115,17 @@
         width:540px}
     .loginForm {
         display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
-        background-color: #50b5ff;
-        border:none;
-        overflow-y: scroll;
-        padding: 20px;
-        margin-bottom: 20px;
-        height: 105%;
+        background: url("../../../../social-project/src/images/message/loginSmall.jpg") no-repeat;
+        width:100%;
 
     }
 
     .loginBlock {
-        text-align: center;
-        background-color: #50b5ff;
-        border:none;
+        background-color: white;
     }
 
-
     .LogoBlock{
-        text-align: center;
-        font-size: 14px;
-        align-items:center;
-        margin-top:20px;
-        background-color: #50b5ff;
-        border:none;
+        display: none;
     }
     .buttonForm{
         color:#50b5ff;
@@ -144,6 +134,21 @@
         border-radius: 5px;
         align-self: center;
         padding: 7px;
+    }
+    .MainForm Input{
+        width:80%;
+        border-radius: 5px;
+        height: 30%;
+        margin-bottom:15px;
+        border: 1px solid #656565;
+
+    }
+    .loginBlock {
+        display: grid;
+        text-align: center;
+        background: #50b5ff;
+        max-width: 100%;
+        opacity: 0.9;
     }
 }
 @media screen and (max-width:575px){
@@ -157,7 +162,7 @@
         grid-template-rows: 1fr 1fr;
         background-color: #50b5ff;
         border:none;
-overflow-y: scroll;
+        overflow-y: scroll;
         padding: 1em;
        min-height: 100vh;
 
