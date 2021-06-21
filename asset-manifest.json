@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/typescript-project/static/css/main.3feca687.chunk.css",
-    "main.js": "/typescript-project/static/js/main.ccc5a3e7.chunk.js",
-    "main.js.map": "/typescript-project/static/js/main.ccc5a3e7.chunk.js.map",
+    "main.css": "/typescript-project/static/css/main.32c8c536.chunk.css",
+    "main.js": "/typescript-project/static/js/main.013a17b9.chunk.js",
+    "main.js.map": "/typescript-project/static/js/main.013a17b9.chunk.js.map",
     "runtime-main.js": "/typescript-project/static/js/runtime-main.e0788b1e.js",
     "runtime-main.js.map": "/typescript-project/static/js/runtime-main.e0788b1e.js.map",
     "static/css/2.8c5372c1.chunk.css": "/typescript-project/static/css/2.8c5372c1.chunk.css",
@@ -16,7 +16,7 @@
     "index.html": "/typescript-project/index.html",
     "static/css/2.8c5372c1.chunk.css.map": "/typescript-project/static/css/2.8c5372c1.chunk.css.map",
     "static/css/3.d1e8326f.chunk.css.map": "/typescript-project/static/css/3.d1e8326f.chunk.css.map",
-    "static/css/main.3feca687.chunk.css.map": "/typescript-project/static/css/main.3feca687.chunk.css.map",
+    "static/css/main.32c8c536.chunk.css.map": "/typescript-project/static/css/main.32c8c536.chunk.css.map",
     "static/js/2.adf5a85a.chunk.js.LICENSE.txt": "/typescript-project/static/js/2.adf5a85a.chunk.js.LICENSE.txt",
     "static/media/messagesItems.module.css": "/typescript-project/static/media/100.de17588a.jpg",
     "static/media/login.module.css": "/typescript-project/static/media/loginSmall.3b5a12d4.jpg",
@@ -32,7 +32,7 @@
     "static/js/runtime-main.e0788b1e.js",
     "static/css/2.8c5372c1.chunk.css",
     "static/js/2.adf5a85a.chunk.js",
-    "static/css/main.3feca687.chunk.css",
-    "static/js/main.ccc5a3e7.chunk.js"
+    "static/css/main.32c8c536.chunk.css",
+    "static/js/main.013a17b9.chunk.js"
   ]
 }
